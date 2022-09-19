@@ -1,0 +1,39 @@
+@import './normalize';
+@import './variables';
+
+@mixin layoutMixin {
+  height:100vh;
+  display: flex;
+  justify-content:center;
+}
+
+  
+  .layout {
+    background-color: var(--layout-bg--color);
+    @include layoutMixin;
+
+    &_light{
+      background-color: var(--layout-bg--color-light);
+      @include layoutMixin;
+    }
+  }   
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 1200px;
+    margin-top: 20px;
+    align-items: center;
+  }
+
+  .content{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+    &-top{
+      display: flex;
+      flex-direction: row;
+    }
+  }

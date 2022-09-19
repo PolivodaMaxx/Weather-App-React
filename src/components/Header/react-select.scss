@@ -1,0 +1,114 @@
+@mixin selectMixin {
+
+    &__control{
+        border: none !important;
+        border-radius: 10px !important;
+        width: 170px;
+        box-shadow: none !important;
+        font-weight: 450;
+    }
+
+    &__value-container{
+        cursor: text !important;
+    }
+
+    &__menu{
+        margin-top: 2px !important;
+        z-index: 3 !important;
+        font-weight: 450;
+    }
+
+    &__option{
+        cursor: pointer !important;
+    }
+
+    &__indicator{
+        color:rgba(#FFFFFF,0.8) !important;
+
+        &:hover{
+            color:rgba(#FFFFFF,0.4) !important
+        }
+    }
+
+    &__indicator-separator{
+        display: none !important;
+    }
+}
+.custom_select{
+    @include selectMixin;
+
+    &__control{
+        background-color:#4F4F4F !important;
+    }
+
+    &__single-value{
+        color:rgba(#FFFFFF,0.8) !important;
+    }
+
+    &__input-container{
+        color:#FFFFFF !important;
+    }
+
+    &__menu{
+        background-color:#4F4F4F !important;
+        color:rgba(#FFFFFF,0.8) !important;
+    }
+
+    &__option{        
+        &--is-focused{
+            background-color:lighten(#4F4F4F,6%) !important;
+        }
+
+        &--is-selected{
+            background-color:lighten(#4F4F4F,15%) !important
+        }
+    }
+
+    &__indicator{
+        color:rgba(#FFFFFF,0.8) !important;
+
+        &:hover{
+            color:rgba(#FFFFFF,0.4) !important
+        }
+    }
+
+}
+
+.custom_select_light{
+    @include selectMixin;
+
+    &__control{
+        background: rgba(71, 147, 255, 0.2) !important;
+    }
+
+    &__single-value{
+        color: #000000 !important;
+    }
+
+    &__input-container{
+        color: #000000 !important;
+    }
+
+        &__menu{
+        background-color:rgba(71, 147, 255, 0.3) !important;
+        color: #000000 !important;
+    }
+
+    &__option{        
+        &--is-focused{
+            background-color:lighten( #4793FF,15%) !important;
+        }
+
+        &--is-selected{
+            background-color:lighten(#4793FF,6%) !important
+        }
+    }
+
+    &__indicator{
+        color:rgba( #000000,0.8) !important;
+
+        &:hover{
+            color:rgba(#000000,0.4) !important
+        }
+    }
+}
