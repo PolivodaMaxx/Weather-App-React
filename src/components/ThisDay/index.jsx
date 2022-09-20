@@ -4,10 +4,12 @@ import styles from '../ThisDay/ThisDay.module.scss';
 import GlobalSvgSelector from '../../assets/img/Indicators/GlobalSvgSelector';
 import useTheme from '../../hooks/UseTheme';
 import useWeatherData from '../../hooks/UseWeatherData';
+import getSelectorId from '../../utils/getSelectorId';
 
 const ThisDay = () => {
   const { isLight } = useTheme();
   const weather = useWeatherData();
+  const svgId = getSelectorId(weather);
   const time = new Date();
   const currentTime = time.toLocaleTimeString().slice(0, -3);
 
@@ -19,7 +21,7 @@ const ThisDay = () => {
           <h2>Сегодня</h2>
         </div>
         <div className={styles.top_svg}>
-          <GlobalSvgSelector id="sun" value="big" />
+          <GlobalSvgSelector id={svgId} value="big" />
         </div>
       </div>
       <div className={styles.bottom}>

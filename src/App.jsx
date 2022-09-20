@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Header from './components/Header';
-import Layout from './components/Layots/Layout';
+import Layout from './components/Layots/Layout.tsx';
 import ThisDay from './components/ThisDay';
 import DetailInfo from './components/DetailInformation';
 import Days from './components/Days';

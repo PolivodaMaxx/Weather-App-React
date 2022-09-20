@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Select from 'react-select';
 
 import styles from './Header.module.scss';
@@ -37,7 +37,7 @@ function Header() {
     setCurrentCity(newValue.value);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     dispatch(fetchWeather(currentCity));
   }, [currentCity, dispatch]);
 

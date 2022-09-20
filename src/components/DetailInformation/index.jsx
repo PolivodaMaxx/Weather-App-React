@@ -5,38 +5,11 @@ import ItemInfo from './ItemInfo';
 import cloudSvg from '../../assets/img/cloud.svg';
 import useTheme from '../../hooks/UseTheme';
 import useWeatherData from '../../hooks/UseWeatherData';
+import getInfoItem from '../../utils/getInfoItem';
 
 const DetailInfo = () => {
   const weather = useWeatherData();
-
-  const items = [
-    {
-      itemId: 'temp',
-      name: 'Температура',
-      value: `${
-        weather.main ? Math.round(weather.main.temp - 274) : '19'
-      }° - ощущается как ${
-        weather.main ? Math.round(weather.main.feels_like - 274) : '17'
-      }°`,
-    },
-    {
-      itemId: 'pressure',
-      name: 'Давление',
-      value: `${
-        weather.main ? Math.round(weather.main.pressure / 1.33) : '765'
-      } мм ртутного столба - нормальное`,
-    },
-    {
-      itemId: 'precipitation',
-      name: 'Осадки',
-      value: `Без осадков`,
-    },
-    {
-      itemId: 'wind',
-      name: 'Ветер',
-      value: `${weather.wind ? weather.wind.speed : '3'} м/с  - легкий ветер`,
-    },
-  ];
+  const items = getInfoItem(weather);
   const { isLight } = useTheme();
 
   return (
